@@ -62,10 +62,24 @@ describe("Binary Tree", () => {
     expect(BT.countLeafNodes()).toBe(5);
   });
 
-  // Number of edges is n - 1, so
-  // it equals BT.longestBranch() - 1
+  it("Count leaf nodes on empty tree", () => {
+    expect(new BinaryTree(new Node(0)).countLeafNodes()).toBe(1);
+  });
+
   it("Longest branch length", () => {
     expect(BT.longestBranch()).toBe(5);
+  });
+
+  it("Longest branch length on empty tree", () => {
+    expect(new BinaryTree(new Node(0)).longestBranch()).toBe(1);
+  });
+
+  it("Longest edge chain", () => {
+    expect(BT.longestEdgeChain()).toBe(4);
+  });
+
+  it("Longest edge chain on empty tree", () => {
+    expect(new BinaryTree(new Node(0)).longestEdgeChain()).toBe(0);
   });
 
   it("Compare to self", () => {

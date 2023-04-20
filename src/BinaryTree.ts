@@ -53,6 +53,12 @@ export class BinaryTree {
     return this.longestBranch_internal(this.root);
   }
 
+  // Number of edges is n - 1, so
+  // it equals this.longestBranch() - 1
+  longestEdgeChain(): number {
+    return this.longestBranch() - 1;
+  }
+
   private equal_internal(
     left: Node | undefined,
     right: Node | undefined
