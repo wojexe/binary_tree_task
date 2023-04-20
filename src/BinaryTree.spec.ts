@@ -86,7 +86,7 @@ describe("Binary Tree", () => {
     expect(BT.equal(BT)).toBeTruthy();
   });
 
-  it("Compare with different tree", () => {
+  it("Compare with tree of the same structure but different values", () => {
     const anotherTree = new BinaryTree(
       new Node(5, {
         left: new Node(3, { left: new Node(2), right: new Node(5) }),
@@ -95,6 +95,22 @@ describe("Binary Tree", () => {
           right: new Node(0, {
             left: new Node(2),
             right: new Node(8, { right: new Node(2) }),
+          }),
+        }),
+      })
+    );
+
+    expect(BT.equal(anotherTree)).toBeFalsy();
+  });
+
+  it("Compare with tree of different structure", () => {
+    const anotherTree = new BinaryTree(
+      new Node(5, {
+        left: new Node(3, { left: new Node(2), right: new Node(5) }),
+        right: new Node(7, {
+          left: new Node(1),
+          right: new Node(0, {
+            left: new Node(2),
           }),
         }),
       })
